@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "thread/thread.h"
+#include "base/thread.h"
 
 int main() {
     std::cout << "Number of hardware threads available: " << std::thread::hardware_concurrency()

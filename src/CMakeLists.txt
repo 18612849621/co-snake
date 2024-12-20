@@ -1,14 +1,12 @@
 find_package(Threads REQUIRED)
 
-include_directories(
-    ${CMAKE_SOURCE_DIR}/include
+file(GLOB BASE_SOURCES base/*.cc)
+# base
+add_library(
+    lib_base STATIC 
+    ${BASE_SOURCES}
 )
 
-# thread
-add_library(
-    lib_thread STATIC 
-    thread/thread.cc
-)
 # utils
 add_library(
     lib_utils STATIC
@@ -17,6 +15,6 @@ add_library(
 
 # link
 target_link_libraries(
-    lib_thread PUBLIC
+    lib_base PUBLIC
     Threads::Threads
 )
