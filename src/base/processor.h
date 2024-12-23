@@ -18,7 +18,6 @@ class BaseProcessor {
     inline void ProcessorDebugInfo(std::string debug_info) {
         std::cout << "[Processor " << name_ << "]" << debug_info << std::endl;
     }
-    bool ExecuteAsyncCallback();   // 执行异步回调
     virtual bool Apply();          // 核心函数逻辑
     bool RegisterAsyncCallback();  // 注册异步回调
    private:
